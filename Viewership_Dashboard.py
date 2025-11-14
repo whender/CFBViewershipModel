@@ -42,6 +42,21 @@ FEUD_END = None  # e.g., datetime(2025, 12, 15) once resolved
 # ======================================================
 st.set_page_config(page_title="CFB Viewership Dashboard", layout="wide")
 
+# Hide Streamlit's default branding / GitHub controls
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    [data-testid="stToolbar"] {display: none !important;}
+    [data-testid="stDecoration"] {display: none !important;}
+    [data-testid="stStatusWidget"] {display: none !important;}
+    [data-testid="stHeaderActionButtons"] {display: none !important;}
+    [data-testid="stAppViewContainer"] > div:first-child {padding-top: 0rem;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # ======================================================
 # 🧠 TEAM NAME MAPPING
 # ======================================================
