@@ -303,45 +303,6 @@ with tab1:
                 "comp_tier1": comp_tier1, "formatted": formatted
             }
 
-        # =============================
-        # 📸 Share Button (unchanged)
-        # =============================
-        if "prediction_data" in st.session_state:
-            if st.button("📸 Share Prediction"):
-                data = st.session_state["prediction_data"]
-                fig, ax = plt.subplots(figsize=(6.4, 3.6))
-                fig.patch.set_facecolor("#0C1B2A")
-                ax.axis("off")
-
-                ax.text(0.5, 0.85,
-                        f"{data['team1']} ({data['rank1'] if data['rank1']>0 else '—'}) vs "
-                        f"{data['team2']} ({data['rank2'] if data['rank2']>0 else '—'})",
-                        ha="center", va="center", fontsize=24, color="white", weight="bold")
-                ax.text(0.5, 0.65,
-                        f"{data['network']}  •  {data['time_slot']}\nSpread: {data['spread']:+.1f}  |  "
-                        f"Major Competing Games: {data['comp_tier1']}",
-                        ha="center", va="center", fontsize=12, color="white", alpha=0.9, linespacing=1.5)
-                ax.text(0.5, 0.4, "Predicted Viewership",
-                        ha="center", va="center", fontsize=10, color="#2DFF8C")
-                ax.text(0.5, 0.25, data["formatted"],
-                        ha="center", va="center", fontsize=48, color="#2DFF8C", weight="bold")
-                ax.text(0.5, 0.05, "CFB Viewership Model • Will Henderson",
-                        ha="center", va="center", fontsize=8, color="gray")
-
-                buf = io.BytesIO()
-                plt.savefig(buf, format="png", bbox_inches="tight",
-                            facecolor=fig.get_facecolor(), dpi=250)
-                plt.close(fig)
-                buf.seek(0)
-                image = Image.open(buf)
-                st.image(image, caption="Shareable prediction card", use_container_width=False, width=600)
-                st.download_button(
-                    label="📤 Download Prediction Card",
-                    data=buf,
-                    file_name=f"{data['team1']}_vs_{data['team2']}_Prediction.png",
-                    mime="image/png"
-                )
-
 # ======================================================
 # 🏆 TAB 2: BRAND RANKINGS (Year-Aware, P4 + Notre Dame)
 # ======================================================
