@@ -846,7 +846,7 @@ st.markdown(
     """
     <div style='text-align: center; font-size: 16px;'>
         <b>Created by <span style='color:#2DFF8C;'>Will Henderson</span></b><br>
-        <a href="mailto:wshenderson7@gmail.com" style="text-decoration:none; color:white;">📧 wshenderson7@gmail.com</a>  
+        <a href="mailto:wshenderson7@gmail.com" style="text-decoration:none;">📧 wshenderson7@gmail.com</a>  
         &nbsp;|&nbsp;  
         <a href="https://twitter.com/willshenderson" target="_blank" style="text-decoration:none; color:#1DA1F2;">𝕏 @willshenderson</a>
     </div>
