@@ -411,7 +411,7 @@ with tab2:
     # --------------------------------------------------
     # 📊 Display
     # --------------------------------------------------
-    st.markdown("###Interpreting Brand Power")
+    st.markdown("Interpreting Brand Power")
     st.caption("""
 **Viewership Lift (%)** = estimated percent increase in national TV audience a team brings 
 to a typical game, controlling for network, time slot, and opponent.  
